@@ -1,0 +1,29 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "mspName": {
+            "value": "Cloudbox"
+        },
+        "mspOfferDescription": {
+            "value": "Cloudbox"
+        },
+        "managedByTenantId": {
+            "value": "9ce857de-079d-4730-8345-644d982bfb09"
+        },
+        "authorizations": {
+            "value": [
+                {
+                    "principalId": "3f4b0955-ce91-4390-b38e-650f2d7a0df0",
+                    "roleDefinitionId": "b24988ac-6180-42a0-ab88-20f7382dd24c",
+                    "principalIdDisplayName": "Cust - AZ - Contributor"
+                },
+				                {
+                    "principalId": "650aef1f-fa43-4da6-83e6-9b16b73bdbee",
+                    "roleDefinitionId": "fa23ad8b-c56e-40d8-ac0c-ce449e1d2c64",
+                    "principalIdDisplayName": "Cust - AZ - Billing"
+                }
+            ]
+        }
+    }
+}
