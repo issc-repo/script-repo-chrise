@@ -39,8 +39,12 @@ $ResolveWingetPath = Resolve-Path "C:\Program Files\WindowsApps\Microsoft.Deskto
     }
 $ENV:PATH += ";$WingetPath"
 
+winget upgrade --all --accept-package-agreements --accept-source-agreements
+
 #}
 
 #net user /delete wingetinstall
 
-winget upgrade --all --accept-package-agreements --accept-source-agreements
+cd /
+
+Remove-Item C:\winget -Recurse -Force
