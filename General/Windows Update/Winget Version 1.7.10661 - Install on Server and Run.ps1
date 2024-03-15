@@ -16,14 +16,14 @@ cd C:\winget
 Add-AppxPackage 'https://aka.ms/Microsoft.VCLibs.x64.14.00.Desktop.appx'
 
 # Install Microsoft.UI.Xaml.2.7.3 from NuGet
-Invoke-WebRequest -Uri https://www.nuget.org/api/v2/package/Microsoft.UI.Xaml/2.7.3 -OutFile .\microsoft.ui.xaml.2.7.3.zip
-Expand-Archive .\microsoft.ui.xaml.2.7.3.zip
-Add-AppxPackage .\microsoft.ui.xaml.2.7.3\tools\AppX\x64\Release\Microsoft.UI.Xaml.2.7.appx
+Invoke-WebRequest -Uri https://www.nuget.org/api/v2/package/Microsoft.UI.Xaml/2.8.6 -OutFile .\microsoft.ui.xaml.2.8.6.zip
+Expand-Archive .\microsoft.ui.xaml.2.8.6.zip -force
+Add-AppxPackage .\microsoft.ui.xaml.2.8.6\tools\AppX\x64\Release\Microsoft.UI.Xaml.2.8.appx
 
 # Install the latest release of Microsoft.DesktopInstaller from GitHub
 Invoke-WebRequest -Uri https://github.com/microsoft/winget-cli/releases/latest/download/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle -OutFile .\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
-Invoke-WebRequest -Uri https://github.com/microsoft/winget-cli/releases/latest/download/24146eb205d040e69ef2d92d7034d97f_License1.xml -OutFile .\24146eb205d040e69ef2d92d7034d97f_License1.xml
-Add-AppxProvisionedPackage -Online -PackagePath .\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle -LicensePath .\24146eb205d040e69ef2d92d7034d97f_License1.xml -Verbose
+Invoke-WebRequest -Uri https://github.com/microsoft/winget-cli/releases/download/v1.7.10661/9ea36fa38dd3449c94cc839961888850_License1.xml -OutFile .\9ea36fa38dd3449c94cc839961888850_License1.xml
+Add-AppxProvisionedPackage -Online -PackagePath .\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle -LicensePath .\9ea36fa38dd3449c94cc839961888850_License1.xml -Verbose
 
 $folderMask = "C:\Program Files\WindowsApps\Microsoft.DesktopAppInstaller_*"
 $folders = Get-ChildItem -Path $folderMask -Directory | Where-Object { $_.Name -like "*_x64_*" }
