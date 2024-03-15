@@ -1,4 +1,4 @@
-#User Switching Function Not Working, still need to work out why
+#User Switching Function Not Working when run under SYSTEM context, still need to work out why
 #net user /add wingetinstall 'bN,7d9qg!h@{BL'
 #net localgroup administrators /add wingetinstall
 
