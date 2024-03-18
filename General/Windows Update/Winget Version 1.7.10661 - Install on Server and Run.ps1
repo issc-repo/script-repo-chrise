@@ -1,13 +1,17 @@
-#User Switching Function Not Working when run under SYSTEM context, still need to work out why
-#net user /add wingetinstall 'bN,7d9qg!h@{BL'
-#net localgroup administrators /add wingetinstall
+#PS Remoting required for running script as SYSTEM
+Enable-PSRemoting –Force
+winrm s winrm/config/client '@{TrustedHosts="localhost"}'
 
-#$pw = 'bN,7d9qg!h@{BL'
-#$username = 'wingetinstall'
-#$password = $pw | ConvertTo-SecureString -AsPlainText -Force
-#$cred = New-Object System.Management.Automation.PSCredential -ArgumentList $username,$password
-#$Session = New-PSSession -Credential $cred
-#Invoke-Command -Session $Session -Scriptblock {
+#Create Temp User Account
+net user /add wingetinstall 'bN,7d9qg!h@{BL'
+net localgroup administrators /add wingetinstall
+
+$pw = 'bN,7d9qg!h@{BL'
+$username = '.\wingetinstall'
+$password = $pw | ConvertTo-SecureString -AsPlainText -Force
+$cred = New-Object System.Management.Automation.PSCredential -ArgumentList $username,$password
+$Session = New-PSSession -Credential $cred
+Invoke-Command -Session $Session -Scriptblock {
 
 mkdir C:\winget
 cd C:\winget
@@ -41,10 +45,8 @@ $ENV:PATH += ";$WingetPath"
 
 winget upgrade --all --accept-package-agreements --accept-source-agreements
 
-#}
+}
 
-#net user /delete wingetinstall
-
-cd /
+net user /delete wingetinstall
 
 Remove-Item C:\winget -Recurse -Force
