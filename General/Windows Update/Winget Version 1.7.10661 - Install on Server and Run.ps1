@@ -1,5 +1,5 @@
 #PS Remoting required for running script as SYSTEM
-Enable-PSRemoting –Force
+Enable-PSRemoting -SkipNetworkProfileCheck -Force
 winrm s winrm/config/client '@{TrustedHosts="localhost"}'
 
 #Create Temp User Account
