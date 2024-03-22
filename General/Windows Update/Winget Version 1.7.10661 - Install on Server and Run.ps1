@@ -30,4 +30,6 @@ $ENV:PATH += ";$WingetPath"
 
 winget upgrade --all --accept-package-agreements --accept-source-agreements
 
+cd C:\
+
 Remove-Item C:\winget -Recurse -Force
