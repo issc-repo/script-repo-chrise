@@ -49,4 +49,6 @@ winget upgrade --all --accept-package-agreements --accept-source-agreements
 
 net user /delete wingetinstall
 
+cd C:\
+
 Remove-Item C:\winget -Recurse -Force
