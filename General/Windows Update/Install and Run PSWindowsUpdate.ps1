@@ -1,6 +1,7 @@
 # Install Powershell Module for Windows Updates
 
 # Allow Installation from Repository
+Install-PackageProvider NuGet -Force
 set-psrepository PSGallery -InstallationPolicy Trusted
 
 # Allow Signed CMDlets to Actually Run
