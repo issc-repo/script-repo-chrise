@@ -38,3 +38,4 @@ winget upgrade --all --accept-package-agreements --accept-source-agreements
 cd C:\
 
 Remove-Item C:\winget -Recurse -Force
+Remove-Item C:\vcredist_x64.exe -Force
