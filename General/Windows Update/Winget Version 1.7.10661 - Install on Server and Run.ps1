@@ -9,7 +9,7 @@ Start-Process -FilePath “C:\vcredist_x64.exe” -ArgumentList “/Q” -Wait
 # Install VCLibs
 Add-AppxPackage 'https://aka.ms/Microsoft.VCLibs.x64.14.00.Desktop.appx'
 
-# Install Microsoft.UI.Xaml.2.7.3 from NuGet
+# Install Microsoft.UI.Xaml.2.8.6 from NuGet
 Invoke-WebRequest -Uri https://www.nuget.org/api/v2/package/Microsoft.UI.Xaml/2.8.6 -OutFile .\microsoft.ui.xaml.2.8.6.zip
 Expand-Archive .\microsoft.ui.xaml.2.8.6.zip -force
 Add-AppxPackage .\microsoft.ui.xaml.2.8.6\tools\AppX\x64\Release\Microsoft.UI.Xaml.2.8.appx
