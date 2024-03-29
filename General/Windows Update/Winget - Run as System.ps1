@@ -3,4 +3,4 @@ $wgdir=(Get-Childitem -Path "C:\Program Files\WindowsApps\Microsoft.DesktopAppIn
 # Move to WinGet Directory
 cd $wgdir
 #Run Winget Upgrade All
-.\winget.exe upgrade --all --accept-package-agreements --accept-source-agreements --scope=machinee
+.\winget.exe upgrade --all --accept-package-agreements --accept-source-agreements --scope=machine
