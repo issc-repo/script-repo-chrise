@@ -2,9 +2,8 @@ mkdir C:\winget
 cd C:\winget
 
 #Install VC
-Install-Module -Name VcRedist -Force
 wget "https://aka.ms/vs/17/release/vc_redist.x64.exe" -Outfile C:\vcredist_x64.exe
-Start-Process -FilePath “C:\vcredist_x64.exe” -ArgumentList “/Q” -Wait
+Start-Process -FilePath “C:\vcredist_x64.exe” -ArgumentList “/Q /norestart” -Wait
 
 # Install VCLibs
 Add-AppxPackage 'https://aka.ms/Microsoft.VCLibs.x64.14.00.Desktop.appx'
