@@ -6,5 +6,6 @@ Remove-Item C:\vcredist_x64.exe -Force
 $wgdir=(Get-Childitem -Path "C:\Program Files\WindowsApps\Microsoft.DesktopAppInstaller*" -Include winget.exe -Recurse -ErrorAction SilentlyContinue | Select-Object -Last 1 | %{$_.FullName} | Split-Path)
 # Move to WinGet Directory
 cd $wgdir
-#Run Winget Upgrade All
+#Run Winget Upgrade All (first upgrade machine-scoped apps, then user scoped apps)
 .\winget.exe upgrade --all --accept-package-agreements --accept-source-agreements --scope=machine
+.\winget.exe upgrade --all --accept-package-agreements --accept-source-agreements
