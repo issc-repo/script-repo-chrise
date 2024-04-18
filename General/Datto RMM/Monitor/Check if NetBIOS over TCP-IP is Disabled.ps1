@@ -8,7 +8,7 @@ Try {
 	$Counter = 0
 	Foreach ($Entry in $Registry )
 	{
-		If ($Entry -eq $Value)
+		If ($Entry -match $Value)
 			{
 				$Counter+=0
 			}
