@@ -1,5 +1,5 @@
 function Set-DKIMAutoEnablement {
-[SkyKickCommand(DisplayName = "CBX - Auto Rotoate DKIM keys to 2048bit (Select Customer to run on)")]
+[SkyKickCommand(DisplayName = "CBX - Auto Rotate DKIM keys to 2048bit (Select Customer to run on)")]
 param(
 [Parameter(Mandatory=$true)][CustomerContext[]]$SelectCustomers
 )
