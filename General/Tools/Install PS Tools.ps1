@@ -6,6 +6,9 @@ set-executionpolicy remotesigned -force
 #Allow Me to Install My Tools
 set-psrepository PSGallery -InstallationPolicy Trusted
 
+#Install PS Module Dependancies
+Install-PackageProvider -Name NuGet -Force
+
 #Gimme My Tools
 install-module az -force
 install-module pswindowsupdate -force
