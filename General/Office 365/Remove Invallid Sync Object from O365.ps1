@@ -1,3 +1,3 @@
 Connect-MsolService 
-Remove-MsolUser -UserPrincipalName wnoordermeer@EdgeGrowth.onmicrosoft.com
-Remove-MsolUser -UserPrincipalName wnoordermeer@EdgeGrowth.onmicrosoft.com -RemoveFromRecycleBin
+Remove-MsolUser -UserPrincipalName user@domain.onmicrosoft.com
+Remove-MsolUser -UserPrincipalName user@domain.onmicrosoft.com -RemoveFromRecycleBin
