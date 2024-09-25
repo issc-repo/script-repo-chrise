@@ -16,6 +16,7 @@ install-module exchangeonlinemanagement -force
 Install-Module MSOnline -force
 install-module Microsoft.Online.SharePoint.PowerShell -force
 install-module Microsoft.graph -force
+Install-Module PnP.PowerShell -force
 
 #For Good Measure - Update all Installed Modules
 Update-Module -force
