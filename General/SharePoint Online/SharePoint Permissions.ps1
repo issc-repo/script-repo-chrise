@@ -1,3 +1,6 @@
+#Connection to PnP PowerShell not included in this script
+#Bit stupid to re-auth all the time, so it was not included
+
 #Function to Get Permissions Applied on a particular Object, such as: Web, List or Folder
 Function Get-PnPPermissions([Microsoft.SharePoint.Client.SecurableObject]$Object)
 {
