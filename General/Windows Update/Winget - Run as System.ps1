@@ -1,4 +1,5 @@
 #Install VC Dependancies if not already installed
+#WARNING - THIS MAY CAUSE A REBOOT IF INSTALLATION / UPGRADE IS REQUIRED
 wget "https://aka.ms/vs/17/release/vc_redist.x64.exe" -Outfile C:\vcredist_x64.exe
 Start-Process -FilePath “C:\vcredist_x64.exe” -ArgumentList “/Q” -Wait
 Remove-Item C:\vcredist_x64.exe -Force
