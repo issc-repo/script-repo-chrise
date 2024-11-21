@@ -1,3 +1,5 @@
+# PS Remoting Not Working as intended, so this script is informational only
+
 #PS Remoting required for running script as SYSTEM
 Enable-PSRemoting -SkipNetworkProfileCheck -Force
 winrm s winrm/config/client '@{TrustedHosts="localhost"}'
