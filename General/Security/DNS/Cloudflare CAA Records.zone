@@ -8,3 +8,4 @@
 @	3600	CAA	0 issuewild "letsencrypt.org"
 @	3600	CAA	0 issuewild "pki.goog; cansignhttpexchanges=yes"
 @	3600	CAA	0 issuewild "ssl.com"
+@	3600	CAA	0 iodef "mailto:failurereporting@domain.com"
