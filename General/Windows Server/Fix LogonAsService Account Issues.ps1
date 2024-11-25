@@ -1,3 +1,6 @@
+#Sourced from https://www.codykonior.com/2015/11/16/rebuilding-the-log-on-as-a-service-list-after-it-has-been-overwritten-by-group-policy/
+#Additional Info here: https://learn.microsoft.com/en-us/answers/questions/980515/how-to-add-nt-serviceall-services-back-to-the-log
+
 $ErrorActionPreference = "Stop"
 Set-StrictMode -Version Latest
 
