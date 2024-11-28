@@ -1,4 +1,5 @@
-# Install Powershell Tech Tools
+# Install Powershell Tech Tools (and Notepad++)
+#Run as Admin
 
 # Allow Me to Use My Tools
 set-executionpolicy remotesigned -force
@@ -20,3 +21,9 @@ Install-Module PnP.PowerShell -force
 
 #For Good Measure - Update all Installed Modules
 Update-Module -force
+
+#Update All Winget-Supported Packages and accept agreements
+winget upgrade --all --accept-package-agreements --accept-source-agreements
+
+#Install Notepad++
+winget install notepad++
