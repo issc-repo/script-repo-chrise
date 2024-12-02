@@ -1,5 +1,3 @@
-# This does not increase the organisation default limit, this will need to be done via the Exchange Online GUI
-
 # Connect to Exchange Online
 Connect-ExchangeOnline
 
