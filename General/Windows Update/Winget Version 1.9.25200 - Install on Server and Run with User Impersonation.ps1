@@ -1,3 +1,20 @@
+# PS Remoting Not Working as intended, so this script is informational only
+
+#PS Remoting required for running script as SYSTEM
+Enable-PSRemoting -SkipNetworkProfileCheck -Force
+winrm s winrm/config/client '@{TrustedHosts="localhost"}'
+
+#Create Temp User Account
+net user /add wingetinstall 'bN,7d9qg!h@{BL'
+net localgroup administrators /add wingetinstall
+
+$pw = 'bN,7d9qg!h@{BL'
+$username = '.\wingetinstall'
+$password = $pw | ConvertTo-SecureString -AsPlainText -Force
+$cred = New-Object System.Management.Automation.PSCredential -ArgumentList $username,$password
+$Session = New-PSSession -Credential $cred
+Invoke-Command -Session $Session -Scriptblock {
+
 mkdir C:\winget
 cd C:\winget
 
@@ -16,8 +33,8 @@ Add-AppxPackage .\microsoft.ui.xaml.2.8.6\tools\AppX\x64\Release\Microsoft.UI.Xa
 
 # Install the latest release of Microsoft.DesktopInstaller from GitHub
 Invoke-WebRequest -Uri https://github.com/microsoft/winget-cli/releases/latest/download/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle -OutFile .\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
-Invoke-WebRequest -Uri https://github.com/microsoft/winget-cli/releases/download/v1.7.10661/9ea36fa38dd3449c94cc839961888850_License1.xml -OutFile .\9ea36fa38dd3449c94cc839961888850_License1.xml
-Add-AppxProvisionedPackage -Online -PackagePath .\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle -LicensePath .\9ea36fa38dd3449c94cc839961888850_License1.xml -Verbose
+Invoke-WebRequest -Uri https://github.com/microsoft/winget-cli/releases/download/v1.9.25200/7fdfd40ea2dc40deab85b69983e1d873_License1.xml -OutFile .\7fdfd40ea2dc40deab85b69983e1d873_License1.xml
+Add-AppxProvisionedPackage -Online -PackagePath .\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle -LicensePath .\7fdfd40ea2dc40deab85b69983e1d873_License1.xml -Verbose
 
 $folderMask = "C:\Program Files\WindowsApps\Microsoft.DesktopAppInstaller_*"
 $folders = Get-ChildItem -Path $folderMask -Directory | Where-Object { $_.Name -like "*_x64_*" }
@@ -34,6 +51,10 @@ $ResolveWingetPath = Resolve-Path "C:\Program Files\WindowsApps\Microsoft.Deskto
 $ENV:PATH += ";$WingetPath"
 
 winget upgrade --all --accept-package-agreements --accept-source-agreements
+
+}
+
+net user /delete wingetinstall
 
 cd C:\
 
