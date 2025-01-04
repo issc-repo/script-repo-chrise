@@ -37,3 +37,6 @@ winget install --id=Adobe.Acrobat.Reader.64-bit  -e
 #Install Browsers
 Winget install mozilla.firefox
 winget install --id=Google.Chrome  -e
+
+#Install Visual Studio Community
+winget install --id=Microsoft.VisualStudio.2022.Community  -e
