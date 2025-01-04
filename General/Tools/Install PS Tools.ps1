@@ -33,3 +33,7 @@ winget install 7zip
 
 #Install Adobe Reader
 winget install --id=Adobe.Acrobat.Reader.64-bit  -e
+
+#Install Browsers
+Winget install firefox
+winget install --id=Google.Chrome  -e
