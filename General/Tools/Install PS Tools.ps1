@@ -27,3 +27,9 @@ winget upgrade --all --accept-package-agreements --accept-source-agreements
 
 #Install Notepad++
 winget install notepad++
+
+#Install 7Zip
+winget install 7zip
+
+#Install Adobe Reader
+winget install --id=Adobe.Acrobat.Reader.64-bit  -e
