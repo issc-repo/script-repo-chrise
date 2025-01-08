@@ -3,6 +3,7 @@
   <Add OfficeClientEdition="64" Channel="Current">
     <Product ID="O365ProPlusRetail">
       <Language ID="en-us" />
+	</Product>
   </Add>
 
  <Property Name="SharedComputerLicensing" Value="1" />
