@@ -39,7 +39,5 @@ mx: *.w-v1.mx.microsoft
 mx: *.x-v1.mx.microsoft
 mx: *.y-v1.mx.microsoft
 mx: *.z-v1.mx.microsoft
-mx: mx1-eu1.ppe-hosted.com
-mx: mx2-eu1.ppe-hosted.com
 max_age: 604800
 `

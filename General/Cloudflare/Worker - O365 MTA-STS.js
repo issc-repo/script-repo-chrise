@@ -12,6 +12,6 @@ addEventListener('fetch', event => {
 })
 const stsHTML = `version: STSv1
 mode: enforce
-mx: sorandom-co-za.mail.protection.outlook.com
+mx: *.mail.protection.outlook.com
 max_age: 86400
 `
