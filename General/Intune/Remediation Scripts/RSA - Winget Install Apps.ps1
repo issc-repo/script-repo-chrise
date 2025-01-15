@@ -16,9 +16,9 @@ Else {
 if (((Test-Path "C:\Program Files (x86)\AnyDeskMSI\AnyDeskMSI.exe") -eq $True) -Or ((Test-Path "C:\Program Files (x86)\AnyDesk\AnyDesk.exe") -eq $True)) {
     Write-Host AnyDesk is Installed
 }
-    Else {
-        Write-Host AnyDesk Is Not Installed, Proceeding with installation
-        .\winget.exe install --id=AnyDeskSoftwareGmbH.AnyDesk -e --accept-package-agreements --accept-source-agreements
+Else {
+    Write-Host AnyDesk Is Not Installed, Proceeding with installation
+    .\winget.exe install --id=AnyDeskSoftwareGmbH.AnyDesk -e --accept-package-agreements --accept-source-agreements
 }
 
 #Install 7Zip
