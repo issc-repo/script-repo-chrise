@@ -1,1 +1,1 @@
-EXEC sp_MSForEachDB 'DBCC SHRINKDATABASE (''?'' , 0)'
+EXEC sp_MSforeachdb 'DBCC SHRINKDATABASE (''?'' , 0)'
