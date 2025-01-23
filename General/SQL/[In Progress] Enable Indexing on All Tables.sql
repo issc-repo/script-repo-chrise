@@ -5,7 +5,7 @@ SET @indexoptions = 'UNIQUE'
 
 USE database_name
 --IF OBJECT_ID('tempdb..#tables') IS NOT NULL DROP TABLE #tables
-SELECT table_schema, table_name INTO #tables FROM information_schema.tables
+SELECT table_schema, table_name INTO #tables FROM INFORMATION_SCHEMA.TABLES
 DECLARE @schema VARCHAR(30), @table VARCHAR(20), @sqlCommand varchar(1000)
 WHILE (SELECT COUNT(*) FROM #tables) > 0
 BEGIN
