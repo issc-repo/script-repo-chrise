@@ -1,3 +1,5 @@
+#Does not work with MFA or current PowerShell versions - Rather use Azure GUI
+
 #Requires -Module Az.Compute
 #Requires -Module Az.Accounts
 #Requires -Module Az.SqlVirtualMachine
