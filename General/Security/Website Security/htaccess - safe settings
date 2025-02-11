@@ -1,16 +1,8 @@
-# Strict-Transport-Security
+# Security Policy
 <IfModule mod_headers.c>
-Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
-</IfModule>
-# X-XSS-Protection
-<IfModule mod_headers.c>
-	Header set X-XSS-Protection "1; mode=block"
-</IfModule>
-# X-Frame-Options
-<IfModule mod_headers.c>
-	Header set X-Frame-Options "SAMEORIGIN"
-</IfModule>
-# X-Content-Type-Options
-<IfModule mod_headers.c>
-	Header set X-Content-Type-Options "nosniff"
+    Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-Content-Type-Options "nosniff"
+    Header set Referrer-Policy "same-origin"
 </IfModule>
